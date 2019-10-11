@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mymod_mymod,mymod.mymod,model_mymod_mymod,,1,0,0,0
+access_ai_table,ai.table,model_ai_table,,1,1,1,1
+access_mymod_groups,mymod.groups,model_mymod_groups,,1,1,1,1
