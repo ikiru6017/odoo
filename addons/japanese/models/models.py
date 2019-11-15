@@ -10,7 +10,7 @@ class students(models.Model):
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
     value3 = fields.Text()
-    group_id = fields.Many2one(comodel_name="mymod.groups")
+    group_id = fields.Many2one(comodel_name="japanese.groups")
 
     @api.depends('value')
     def _value_pc(self):
@@ -18,7 +18,7 @@ class students(models.Model):
 
 
 class groups(models.Model):
-    _name = 'mymod.groups'
+    _name = 'japanese.groups'
 
     name = fields.Char()
     value = fields.Integer()
@@ -29,3 +29,8 @@ class groups(models.Model):
     @api.depends('value')
     def _value_pc(self):
         self.value2 = float(self.value) / 100
+
+class parts_of_speech(models.Model):
+    _name = 'japanese.part_of_speech'
+
+    title = fields.Char()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "mymod",
+    'name': "japanese",
 
     'summary': """
         course work""",
