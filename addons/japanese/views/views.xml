@@ -4,7 +4,7 @@
     !--
     <record model="ir.ui.view" id="japanese.list">
       <field name="name">japanese list</field>
-      <field name="model">ai.table</field>
+      <field name="model">japanese.students</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -46,7 +46,7 @@
 
     <record model="ir.ui.view" id="japanese.form">
       <field name="name">japanese form</field>
-      <field name="model">ai.table</field>
+      <field name="model">japanese.students</field>
       <field name="arch" type="xml">
         <form>
         <sheet>
@@ -64,7 +64,7 @@
 
       <record model="ir.ui.view" id="japanese.search">
       <field name="name">japanese search</field>
-      <field name="model">ai.table</field>
+      <field name="model">japanese.students</field>
       <field name="arch" type="xml">
         <search>
           <field name="name"/>
@@ -79,7 +79,7 @@
     !--
     <record model="ir.actions.act_window" id="japanese.action_window">
       <field name="name">japanese window</field>
-      <field name="res_model">ai.table</field>
+      <field name="res_model">japanese.students</field>
       <field name="view_mode">tree,form</field>
     </record>
     -->
@@ -101,7 +101,7 @@
     !--
     <record model="ir.actions.server" id="japanese.action_server">
       <field name="name">japanese server</field>
-      <field name="model_id" ref="model_ai_table"/>
+      <field name="model_id" ref="model_japanese_students"/>
       <field name="state">code</field>
       <field name="code">
         action = {

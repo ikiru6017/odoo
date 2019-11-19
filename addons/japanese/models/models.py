@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class students(models.Model):
-    _name = 'ai.table'
+    _name = 'japanese.students'
 
     name = fields.Char()
     value = fields.Integer()
@@ -24,13 +24,13 @@ class groups(models.Model):
     value = fields.Integer()
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
-    students_ids = fields.One2many(comodel_name="ai.table" , inverse_name="group_id")
+    students_ids = fields.One2many(comodel_name="japanese.students" , inverse_name="group_id")
 
     @api.depends('value')
     def _value_pc(self):
         self.value2 = float(self.value) / 100
 
 class parts_of_speech(models.Model):
-    _name = 'japanese.part_of_speech'
+    _name = 'japanese.parts_of_speech'
 
     title = fields.Char()
