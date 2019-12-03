@@ -33,4 +33,14 @@ class groups(models.Model):
 class parts_of_speech(models.Model):
     _name = 'japanese.parts_of_speech'
 
-    title = fields.Char()
+    name = fields.Char()
+
+class pole(models.Model):
+    _name = 'japanese.pole'
+
+    name = fields.Char()
+
+class stroke(models.Model):
+    _name = 'japanese.stroke'
+
+    name = fields.Char()

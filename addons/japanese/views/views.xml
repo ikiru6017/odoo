@@ -39,10 +39,32 @@
       <field name="model">japanese.parts_of_speech</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="title"/>
+          <field name="name"/>
         </tree>
       </field>
     </record>
+
+    <record model="ir.ui.view" id="japanese.pole">
+      <field name="name">japanese pole</field>
+      <field name="model">japanese.pole</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="japanese.stroke">
+      <field name="name">japanese stroke</field>
+      <field name="model">japanese.stroke</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
 
     <record model="ir.ui.view" id="japanese.form">
       <field name="name">japanese form</field>
@@ -97,6 +119,18 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="japanese.action_window3">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.pole</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window4">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.stroke</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     !-- server action to the one above -->
     !--
     <record model="ir.actions.server" id="japanese.action_server">
@@ -128,8 +162,12 @@
               action="japanese.action_window"/>
     <menuitem name="Table" id="japanese.menu_1_table" parent="japanese.menu_1"
               action="japanese.action_window1"/>
-    <menuitem name="Table" id="japanese.menu_1_table" parent="japanese.menu_1"
+    <menuitem name="Parts_of_speech" id="japanese.menu_1_parts_of_speech" parent="japanese.menu_1"
               action="japanese.action_window2"/>
+    <menuitem name="Pole" id="japanese.menu_1_pole" parent="japanese.menu_1"
+              action="japanese.action_window3"/> 
+    <menuitem name="Stroke" id="japanese.menu_1_stroke" parent="japanese.menu_1"
+              action="japanese.action_window4"/> 
     <menuitem name="Server to list" id="japanese" parent="japanese.menu_2"
               action="japanese.action_server"/>
     -->

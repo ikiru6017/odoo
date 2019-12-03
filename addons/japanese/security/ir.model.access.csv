@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_japanese_students,japanese.students,model_japanese_students,,1,1,1,1
 access_japanese_groups,japanese.groups,model_japanese_groups,,1,1,1,1
 access_japanese_parts_of_speech,japanese.parts_of_speech,model_japanese_parts_of_speech,,1,1,1,1
+access_japanese_pole,japanese.pole,model_japanese_pole,,1,1,1,1
+access_japanese_stroke,japanese.stroke,model_japanese_stroke,,1,1,1,1
