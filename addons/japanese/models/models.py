@@ -39,8 +39,39 @@ class pole(models.Model):
     _name = 'japanese.pole'
 
     name = fields.Char()
+    letterID = fields.Many2one(comodel_name="japanese.letters")
 
 class stroke(models.Model):
     _name = 'japanese.stroke'
 
     name = fields.Char()
+    letterID = fields.Many2one(comodel_name="japanese.letters")
+
+class seito(models.Model):
+    _name = 'japanese.seito'
+
+    name = fields.Char()
+    login = fields.Char()
+    password = fields.Char()
+
+class lessons(models.Model):
+    _name = 'japanese.lessons'
+
+    name = fields.Char()
+    lesson_num = fields.Integer()
+
+class task_types(models.Model):
+    _name = 'japanese.task_types'
+
+    name = fields.Char()
+
+class letters(models.Model):
+    _name = 'japanese.letters'
+
+    strokeID = fields.One2many(comodel_name="japanese.stroke" , inverse_name="letterID")
+    poleID = fields.One2many(comodel_name="japanese.pole" , inverse_name="letterID")
+    title_rom = fields.Char()
+    title_hira = fields.Char()
+    code_hira = fields.Char()
+    title_kata = fields.Char()
+    code_kata = fields.Char()

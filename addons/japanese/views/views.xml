@@ -50,6 +50,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="letterID"/>
         </tree>
       </field>
     </record>
@@ -61,10 +62,59 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="letterID"/>
         </tree>
       </field>
     </record>
 
+    <record model="ir.ui.view" id="japanese.seito">
+      <field name="name">japanese seito</field>
+      <field name="model">japanese.seito</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="login"/>
+          <field name="password"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.lessons">
+      <field name="name">japanese lessons</field>
+      <field name="model">japanese.lessons</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="lesson_num"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.task_types">
+      <field name="name">japanese task_types</field>
+      <field name="model">japanese.task_types</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.letters">
+      <field name="name">japanese letters</field>
+      <field name="model">japanese.letters</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="strokeID"/>
+          <field name="poleID"/>
+          <field name="title_rom"/>
+          <field name="title_hira"/>
+          <field name="code_hira"/>
+          <field name="title_kata"/>
+          <field name="code_kata"/>
+        </tree>
+      </field>
+    </record>
 
     <record model="ir.ui.view" id="japanese.form">
       <field name="name">japanese form</field>
@@ -131,6 +181,31 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="japanese.action_window5">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.seito</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window6">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.lessons</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window7">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.task_types</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window8">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.letters</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
     !-- server action to the one above -->
     !--
     <record model="ir.actions.server" id="japanese.action_server">
@@ -167,7 +242,15 @@
     <menuitem name="Pole" id="japanese.menu_1_pole" parent="japanese.menu_1"
               action="japanese.action_window3"/> 
     <menuitem name="Stroke" id="japanese.menu_1_stroke" parent="japanese.menu_1"
-              action="japanese.action_window4"/> 
+              action="japanese.action_window4"/>
+    <menuitem name="Seito" id="japanese.menu_1_seito" parent="japanese.menu_1"
+              action="japanese.action_window5"/> 
+    <menuitem name="Lessons" id="japanese.menu_1_lessons" parent="japanese.menu_1"
+              action="japanese.action_window6"/>
+    <menuitem name="Task_types" id="japanese.menu_1_task_types" parent="japanese.menu_1"
+              action="japanese.action_window7"/>
+    <menuitem name="Letters" id="japanese.menu_1_letters" parent="japanese.menu_1"
+              action="japanese.action_window8"/>   
     <menuitem name="Server to list" id="japanese" parent="japanese.menu_2"
               action="japanese.action_server"/>
     -->
