@@ -8,3 +8,9 @@ access_japanese_seito,japanese.seito,model_japanese_seito,,1,1,1,1
 access_japanese_lessons,japanese.lessons,model_japanese_lessons,,1,1,1,1
 access_japanese_task_types,japanese.task_types,model_japanese_task_types,,1,1,1,1
 access_japanese_letters,japanese.letters,model_japanese_letters,,1,1,1,1
+access_japanese_words,japanese.words,model_japanese_words,,1,1,1,1
+access_japanese_pronunciation,japanese.pronunciation,model_japanese_pronunciation,,1,1,1,1
+access_japanese_kanji,japanese.kanji,model_japanese_kanji,,1,1,1,1
+access_japanese_tasks,japanese.tasks,model_japanese_tasks,,1,1,1,1
+access_japanese_answers,japanese.answers,model_japanese_answers,,1,1,1,1
+access_japanese_history,japanese.history,model_japanese_history,,1,1,1,1

@@ -116,6 +116,91 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="japanese.words">
+      <field name="name">japanese words</field>
+      <field name="model">japanese.words</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="transcription"/>
+          <field name="translation"/>
+          <field name="part_of_speechID"/>
+          <field name="lessonID"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.pronunciation">
+      <field name="name">japanese pronunciation</field>
+      <field name="model">japanese.pronunciation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="wordID"/>
+          <field name="audiofile"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.kanji">
+      <field name="name">japanese kanji</field>
+      <field name="model">japanese.kanji</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="meanings"/>
+          <field name="kunyomi"/>
+          <field name="onyomi"/>
+          <field name="linesQty"/>
+          <field name="code"/>
+          <field name="lessonID"/>
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="japanese.tasks">
+      <field name="name">japanese tasks</field>
+      <field name="model">japanese.tasks</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="lessonID"/>
+          <field name="number"/>
+          <field name="part"/>
+          <field name="name"/>
+          <field name="text"/>
+          <field name="ans_option"/>
+          <field name="typeID"/>
+          <field name="image"/>
+          <field name="audio"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.answers">
+      <field name="name">japanese answers</field>
+      <field name="model">japanese.answers</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="taskID"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="japanese.history">
+      <field name="name">japanese history</field>
+      <field name="model">japanese.history</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="seitoID"/>
+          <field name="lessonID"/>
+          <field name="numberID"/>
+          <field name="rights"/>
+          <field name="wrongs"/>
+          <field name="datetime"/>
+        </tree>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="japanese.form">
       <field name="name">japanese form</field>
       <field name="model">japanese.students</field>
@@ -205,6 +290,42 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="japanese.action_window9">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.words</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window10">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.pronunciation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window11">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.kanji</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window12">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.tasks</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window13">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.answers</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="japanese.action_window14">
+      <field name="name">japanese window</field>
+      <field name="res_model">japanese.history</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     !-- server action to the one above -->
     !--
@@ -250,7 +371,19 @@
     <menuitem name="Task_types" id="japanese.menu_1_task_types" parent="japanese.menu_1"
               action="japanese.action_window7"/>
     <menuitem name="Letters" id="japanese.menu_1_letters" parent="japanese.menu_1"
-              action="japanese.action_window8"/>   
+              action="japanese.action_window8"/>
+    <menuitem name="Words" id="japanese.menu_1_words" parent="japanese.menu_1"
+              action="japanese.action_window9"/>
+    <menuitem name="Pronunciation" id="japanese.menu_1_pronunciation" parent="japanese.menu_1"
+              action="japanese.action_window10"/>
+    <menuitem name="Kanji" id="japanese.menu_1_kanji" parent="japanese.menu_1"
+              action="japanese.action_window11"/>
+    <menuitem name="Tasks" id="japanese.menu_1_tasks" parent="japanese.menu_1"
+              action="japanese.action_window12"/>
+    <menuitem name="Answers" id="japanese.menu_1_answers" parent="japanese.menu_1"
+              action="japanese.action_window13"/>
+    <menuitem name="History" id="japanese.menu_1_history" parent="japanese.menu_1"
+              action="japanese.action_window14"/>             
     <menuitem name="Server to list" id="japanese" parent="japanese.menu_2"
               action="japanese.action_server"/>
     -->

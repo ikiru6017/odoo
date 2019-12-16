@@ -39,13 +39,13 @@ class pole(models.Model):
     _name = 'japanese.pole'
 
     name = fields.Char()
-    letterID = fields.Many2one(comodel_name="japanese.letters")
+    letterID = fields.One2many(comodel_name="japanese.letters", inverse_name="poleID")
 
 class stroke(models.Model):
     _name = 'japanese.stroke'
 
     name = fields.Char()
-    letterID = fields.Many2one(comodel_name="japanese.letters")
+    letterID = fields.One2many(comodel_name="japanese.letters", inverse_name="strokeID")
 
 class seito(models.Model):
     _name = 'japanese.seito'
@@ -68,10 +68,65 @@ class task_types(models.Model):
 class letters(models.Model):
     _name = 'japanese.letters'
 
-    strokeID = fields.One2many(comodel_name="japanese.stroke" , inverse_name="letterID")
-    poleID = fields.One2many(comodel_name="japanese.pole" , inverse_name="letterID")
+    strokeID = fields.Many2one(comodel_name="japanese.stroke")
+    poleID = fields.Many2one(comodel_name="japanese.pole")
     title_rom = fields.Char()
     title_hira = fields.Char()
     code_hira = fields.Char()
     title_kata = fields.Char()
     code_kata = fields.Char()
+
+class words(models.Model):
+    _name = 'japanese.words'
+
+    name = fields.Char()
+    transcription = fields.Char()
+    translation = fields.Char()
+    part_of_speechID = fields.Many2one(comodel_name="japanese.parts_of_speech")
+    lessonID = fields.Many2one(comodel_name="japanese.lessons")
+
+class pronunciation(models.Model):
+    _name = 'japanese.pronunciation'
+
+    wordID = fields.Many2one(comodel_name="japanese.words")
+    audiofile = fields.Char()
+    
+class kanji(models.Model):
+    _name = 'japanese.kanji'
+
+    name = fields.Char()
+    meanings = fields.Char()
+    kunyomi = fields.Char()
+    onyomi = fields.Char()
+    linesQty = fields.Integer()
+    code = fields.Char()
+    lessonID = fields.Many2one(comodel_name="japanese.lessons")
+
+class tasks(models.Model):
+    _name = 'japanese.tasks'
+
+    lessonID = fields.Many2one(comodel_name="japanese.lessons")
+    number = fields.Integer()
+    part = fields.Integer()
+    name = fields.Char()
+    text = fields.Char()
+    ans_option = fields.Char()
+    typeID = fields.Many2one(comodel_name="japanese.task_types")
+    image = fields.Char()
+    audio = fields.Char()
+
+class answers(models.Model):
+    _name = 'japanese.answers'
+
+    taskID = fields.Many2one(comodel_name="japanese.tasks")
+    name = fields.Char()
+
+class history(models.Model):
+    _name = 'japanese.history'
+
+    seitoID = fields.Many2one(comodel_name="japanese.seito")
+    lessonID = fields.Many2one(comodel_name="japanese.lessons")
+    numberID = fields.Many2one(comodel_name="japanese.tasks")
+    rights = fields.Char()
+    wrongs = fields.Char()
+    datetime = fields.Datetime()
